@@ -1,11 +1,18 @@
 import google.generativeai as genai
-from config import GEMINI_API_KEY
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
+gemini_api_key = os.getenv("GEMINI_API_KEY")
 # using gemini via api , instead of locally installing it
 
 # Configure the Gemini API
-genai.configure(api_key=GEMINI_API_KEY)
+
+if not gemini_api_key:
+    raise ValueError("GEMINI_API_KEY not found. Please make sure it's set in your .env file.")
+
+
+genai.configure(api_key=gemini_api_key)
 
 # Load Gemini model
 model = genai.GenerativeModel('gemini-2.5-pro')
