@@ -1,3 +1,5 @@
 Data Collection/emotions_dataset.csv
 Data Cleaning/output/train_set.csv
 Data Cleaning/output/test_set.csv
+With RNN
+Final Show/config.py
