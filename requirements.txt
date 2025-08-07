@@ -1,0 +1,33 @@
+# Core dependencies
+streamlit==1.47.0
+torch==2.7.0
+torchtext==0.18.0
+scikit-learn==1.6.1
+matplotlib==3.10.3
+seaborn==0.13.2
+pandas==2.2.3
+numpy==1.26.4
+nltk==3.9.1
+
+# Google Gemini (generative AI)
+google-generativeai==0.8.5
+google-api-core==2.25.1
+google-auth==2.40.3
+google-auth-httplib2==0.2.0
+googleapis-common-protos==1.70.0
+proto-plus==1.26.1
+protobuf==5.29.5
+httplib2==0.22.0
+requests==2.32.4
+
+# Utilities
+python-dotenv==1.1.1
+joblib==1.4.2
+regex==2024.11.6
+tqdm==4.67.1
+altair==5.5.0
+
+# Optional / used internally by Streamlit or for better visuals
+pydeck==0.9.1
+watchdog==6.0.0
+PyYAML==6.0.2
