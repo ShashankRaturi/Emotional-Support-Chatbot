@@ -10,13 +10,21 @@ if "emotions" not in st.session_state:
 st.set_page_config(page_title="Emotion Support Bot", layout="centered")
 st.title("Empathetic Emotion-Aware Chatbot")
 st.markdown("Enter how you're feeling and receive a thoughtful response.")
+st.info(
+    "📝 **Note**: For better emotion prediction, please enter detailed and expressive messages. "
+    "Short or vague inputs may reduce prediction accuracy."
+)
 
 # User input box
 user_input = st.text_area("Your Message", height=200)
 
 # process on button click
 if st.button("Generate Response"):
-    if user_input.strip():
+
+    if len(user_input.strip().split()) < 30:
+        st.warning("Try writing a bit more about how you're feeling for better emotion detection.")
+
+    elif user_input.strip():
         with st.spinner("Please wait , while we analyzing..."):
             
             # predict emotion
@@ -34,7 +42,6 @@ if st.button("Generate Response"):
         st.success(response)
     else:
         st.warning("Please enter a message before generating a response.")
-
 
 # Handle End of Conversation
 if st.button("End Conversation and Show Mood Graph"):
